@@ -2,6 +2,7 @@ const { defineConfig } = require("cypress");
 const { verifyDownloadTasks } = require('cy-verify-downloads');
 
 module.exports = defineConfig({
+  projectId: "6g7emz",
   includeShadowDom: true,
   chromeWebSecutity: false,
   viewportHeight: 1080,
