@@ -1,0 +1,15 @@
+{
+ "scripts": {
+  "open": "npx cypress open"
+ },
+ "devDependencies": {
+  "cy-verify-downloads": "^0.2.5",
+  "cypress": "^13.13.0"
+ },
+ "dependencies": {
+  "cypress-localstorage-commands": "^2.2.4",
+  "mailslurp": "^0.0.1-security",
+  "mailslurp-client": "^15.17.4",
+  "moment": "^2.29.4"
+ }
+}
