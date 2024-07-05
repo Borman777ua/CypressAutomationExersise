@@ -3,7 +3,7 @@
   "test:chrome": "npx cypress run --browser chrome --record --key ffb688db-fb2c-4e97-8416-81088c2995ce",
     "test:firefox": "npx cypress run --browser firefox --record --key ffb688db-fb2c-4e97-8416-81088c2995ce",
     "test:edge": "npx cypress run --browser edge --record --key ffb688db-fb2c-4e97-8416-81088c2995ce",
-    "test:all": "npm-run-all --parallel test:chrome test:firefox test:edge"
+    "test:all": "npm-run-all  test:chrome test:firefox test:edge"
  },
  "devDependencies": {
   "cy-verify-downloads": "^0.2.5",

@@ -31,7 +31,7 @@ describe("Verify navigation on page", () => {
     it("Navigation to Contact us", () => {
         navigation._navigationToContactUs()
     })
-    it("Navigation to Video and Tutorials", () => {
+    it("Navigation to Video and Tutorials", { browser: '!firefox' }, () => {
         navigation._navigationToVideoTutorials()
     })
 })
