@@ -1,6 +1,7 @@
 {
  "scripts": {
-  "open": "npx cypress open"
+  "open": "npx cypress open",
+  "runOnChrome": "npx cypress run --browser chrome --record --key ffb688db-fb2c-4e97-8416-81088c2995ce"
  },
  "devDependencies": {
   "cy-verify-downloads": "^0.2.5",

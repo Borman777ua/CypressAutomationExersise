@@ -29,7 +29,7 @@ class HomePage {
         cy.get('b').contains(name).should('be.visible')
     }
     _executeSubscription(email) {
-        elementVerification._verifyText('h2', "Subscription")
+        elementVerification._verifyLocatorWhichContainsELement('[id="footer"]', "Subscription")
         navigation._typeValues('input[id="susbscribe_email"]', email)
         navigation._clickOnElement('button[id="subscribe"]')
         elementVerification._verifyText('[class="alert-success alert"]', "You have been successfully subscribed!")
