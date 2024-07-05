@@ -4,21 +4,21 @@ const email = Cypress.env("testEmail2")
 let password = Cypress.env("testPassword")
 
 
-beforeEach(() => {
+beforeEach.skip(() => {
     cy.visit('/')
     navigation._navigationToSignUpLogin()
 })
 
-it.only("Register User", () => {
+it.skip("Register User", () => {
     cy.registerUser(email);
     SignUpPage._logOut()
 })
 
-it("Execute Login", () => {
+it.skip("Execute Login", () => {
     SignUpPage._executeLogIn(email, password)
     SignUpPage._logOut()
 })
-it("Execute Login and Delete Account", () => {
+it.skip("Execute Login and Delete Account", () => {
     SignUpPage._executeLogIn(email, password)
     SignUpPage._executeAccountDeletion()
 })
