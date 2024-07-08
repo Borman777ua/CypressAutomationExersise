@@ -30,22 +30,20 @@ import SignUpPage from "../../support/AutomationExersisePageObject/SignUpPage"
 import navigation from "../../support/AutomationExersisePageObject/navigation"
 
 
-
-before(() => {
-    cy.visit("/")
-    HomePage._verifyHomePage()
-})
-
-
-it("Test Case 14: Place Order: Register while Checkout", () => {
-    let email = Cypress.env("testEmail")
-    navigation._navigationToProducts()
-    ProductsPage._addProductToCart("1")
-    navigation._navigationToCart()
-    cy.registerUser(email);
-    HomePage._verifyNewElementsAfterRegistration()
-    navigation._navigationToCart()
-    CartPage._executeBuyOperation()
-    SignUpPage._executeAccountDeletion()
-
+describe("Test Case 14: Place Order: Register while Checkout", () => {
+    before(() => {
+        cy.visit("/")
+        HomePage._verifyHomePage()
+    })
+    it("Test Case 14: Place Order: Register while Checkout", () => {
+        let email = Cypress.env("testEmail")
+        navigation._navigationToProducts()
+        ProductsPage._addProductToCart("1")
+        navigation._navigationToCart()
+        cy.registerUser(email);
+        HomePage._verifyNewElementsAfterRegistration()
+        navigation._navigationToCart()
+        CartPage._executeBuyOperation()
+        SignUpPage._executeAccountDeletion()
+    })
 })

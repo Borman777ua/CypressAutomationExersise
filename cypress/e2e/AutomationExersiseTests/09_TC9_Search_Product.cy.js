@@ -15,17 +15,18 @@ import ProductsPage from "../../support/AutomationExersisePageObject/ProductsPag
 import navigation from "../../support/AutomationExersisePageObject/navigation"
 
 
+describe("Test Case 9: Search Product", () => {
+
+    before(() => {
+        cy.visit("/")
+        HomePage._verifyHomePage()
+    })
 
 
-before(() => {
-    cy.visit("/")
-    HomePage._verifyHomePage()
-})
-
-
-it("Test Case 9: Search Product", () => {
-    let value = "Tshirt"
-    navigation._navigationToProducts()
-    ProductsPage._verifyAllProducts()
-    ProductsPage._searchProduct(value)
+    it("Test Case 9: Search Product", () => {
+        let value = "Tshirt"
+        navigation._navigationToProducts()
+        ProductsPage._verifyAllProducts()
+        ProductsPage._searchProduct(value)
+    })
 })

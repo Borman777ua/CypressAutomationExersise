@@ -24,19 +24,23 @@ import SignUpPage from "../../support/AutomationExersisePageObject/SignUpPage"
 import navigation from "../../support/AutomationExersisePageObject/navigation"
 const email = Cypress.env("testEmail")
 let password = Cypress.env("testPassword")
-before(() => {
-    cy.visit("/")
-    HomePage._verifyHomePage()
-})
 
 
-it("Test Case 23: Verify address details in checkout page", () => {
-    cy.registerUser(email);
-    navigation._navigationToProducts()
-    ProductsPage._addProductToCart("2")
-    navigation._navigationToCart()
-    CartPage._proceedToCheckOut()
-    CartPage.verifyAdress('[id="address_delivery"]')
-    CartPage.verifyAdress('[id="address_invoice"]')
-    SignUpPage._deleteAccount()
+describe("Test Case 23: Verify address details in checkout page", () => {
+    before(() => {
+        cy.visit("/")
+        HomePage._verifyHomePage()
+    })
+
+
+    it("Test Case 23: Verify address details in checkout page", () => {
+        cy.registerUser(email);
+        navigation._navigationToProducts()
+        ProductsPage._addProductToCart("2")
+        navigation._navigationToCart()
+        CartPage._proceedToCheckOut()
+        CartPage.verifyAdress('[id="address_delivery"]')
+        CartPage.verifyAdress('[id="address_invoice"]')
+        SignUpPage._deleteAccount()
+    })
 })

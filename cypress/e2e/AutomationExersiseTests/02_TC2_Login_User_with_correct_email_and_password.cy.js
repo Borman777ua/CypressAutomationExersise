@@ -18,19 +18,23 @@ import navigation from "../../support/AutomationExersisePageObject/navigation"
 
 const email = Cypress.env("testEmail2")
 let password = Cypress.env("testPassword")
-before(() => {
-    cy.visit('/')
-    cy.registerUser(email);
-    SignUpPage._logOut()
-})
-beforeEach(() => {
-    cy.visit('/')
-})
 
-it("Test Case 2: Login User with correct email and password", () => {
-    HomePage._verifyHomePage()
-    navigation._navigationToSignUpLogin()
-    SignUpPage._executeLogIn(email, password)
-    HomePage._verifyNewElementsAfterRegistration()
-    SignUpPage._executeAccountDeletion()
+
+describe("Test Case 2: Login User with correct email and password", () => {
+    before(() => {
+        cy.visit('/')
+        cy.registerUser(email);
+        SignUpPage._logOut()
+    })
+    beforeEach(() => {
+        cy.visit('/')
+    })
+
+    it("Test Case 2: Login User with correct email and password", () => {
+        HomePage._verifyHomePage()
+        navigation._navigationToSignUpLogin()
+        SignUpPage._executeLogIn(email, password)
+        HomePage._verifyNewElementsAfterRegistration()
+        SignUpPage._executeAccountDeletion()
+    })
 })

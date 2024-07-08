@@ -22,24 +22,26 @@ let email = Cypress.env("testEmail2")
 let password = Cypress.env("testPassword")
 let allertMessage = "Your email or password is incorrect!"
 
-beforeEach(() => {
-    cy.visit('/')
-    HomePage._verifyHomePage()
-    navigation._navigationToSignUpLogin()
-})
-
-
 describe("Test Case 3: Login User with incorrect email and password", () => {
-    it("Login with incorrect email", () => {
-        let email = "123@mail.com"
-        SignUpPage._executeLogIn(email, password)
-        elementVerification._verifyAlertMessage(allertMessage)
+    beforeEach(() => {
+        cy.visit('/')
+        HomePage._verifyHomePage()
+        navigation._navigationToSignUpLogin()
     })
 
-    it("Login with incorrect password", () => {
-        let password = "123!"
-        SignUpPage._executeLogIn(email, password)
-        elementVerification._verifyAlertMessage(allertMessage)
-    })
 
+    describe("Test Case 3: Login User with incorrect email and password", () => {
+        it("Login with incorrect email", () => {
+            let email = "123@mail.com"
+            SignUpPage._executeLogIn(email, password)
+            elementVerification._verifyAlertMessage(allertMessage)
+        })
+
+        it("Login with incorrect password", () => {
+            let password = "123!"
+            SignUpPage._executeLogIn(email, password)
+            elementVerification._verifyAlertMessage(allertMessage)
+        })
+
+    })
 })

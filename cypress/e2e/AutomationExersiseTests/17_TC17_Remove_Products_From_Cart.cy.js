@@ -15,14 +15,16 @@ import HomePage from "../../support/AutomationExersisePageObject/HomePage"
 import ProductsPage from "../../support/AutomationExersisePageObject/ProductsPage"
 import navigation from "../../support/AutomationExersisePageObject/navigation"
 
-before(() => {
-    cy.visit("/")
-    HomePage._verifyHomePage()
-})
 
-it("Test Case 17: Remove Products From Cart", () => {
-    navigation._navigationToProducts()
-    ProductsPage._addProductToCart("1")
-    navigation._navigationToCart()
-    CartPage._removeFromCart("1")
+describe("Test Case 17: Remove Products From Cart", () => {
+    before(() => {
+        cy.visit("/")
+        HomePage._verifyHomePage()
+    })
+    it("Test Case 17: Remove Products From Cart", () => {
+        navigation._navigationToProducts()
+        ProductsPage._addProductToCart("1")
+        navigation._navigationToCart()
+        CartPage._removeFromCart("1")
+    })
 })

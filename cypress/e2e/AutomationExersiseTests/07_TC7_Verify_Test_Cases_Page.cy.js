@@ -9,12 +9,14 @@ Test Case 7: Verify Test Cases Page
 5. Verify user is navigated to test cases page successfully
 */
 
-beforeEach(() => {
-    cy.visit('/')
-    HomePage._verifyHomePage()
-})
+describe("Test Case 7: Verify Test Cases Page", () => {
+    beforeEach(() => {
+        cy.visit('/')
+        HomePage._verifyHomePage()
+    })
 
 
-it("Test Case 7: Verify Test Cases Page", () => {
-    navigation._navigationToTestCases()
+    it("Test Case 7: Verify Test Cases Page", () => {
+        navigation._navigationToTestCases()
+    })
 })

@@ -29,28 +29,24 @@ import navigation from "../../support/AutomationExersisePageObject/navigation"
 const email = Cypress.env("testEmail")
 let password = Cypress.env("testPassword")
 
-
-beforeEach(() => {
-    cy.visit('/')
-})
-
-
-
-it("Pre Condition:Register User", () => {
-    cy.visit('/')
-    HomePage._verifyHomePage()
-    cy.registerUser(email);
-})
-
-
-it("Test Case 16: Place Order: Login before Checkout", () => {
-    HomePage._verifyHomePage()
-    navigation._navigationToSignUpLogin()
-    SignUpPage._executeLogIn(email, password)
-    HomePage._verifyNewElementsAfterRegistration()
-    navigation._navigationToProducts()
-    ProductsPage._addProductToCart("1")
-    navigation._navigationToCart()
-    CartPage._executeBuyOperation()
-    SignUpPage._executeAccountDeletion()
+describe("Test Case 16: Place Order: Login before Checkout", () => {
+    beforeEach(() => {
+        cy.visit('/')
+    })
+    it("Pre Condition:Register User", () => {
+        cy.visit('/')
+        HomePage._verifyHomePage()
+        cy.registerUser(email);
+    })
+    it("Test Case 16: Place Order: Login before Checkout", () => {
+        HomePage._verifyHomePage()
+        navigation._navigationToSignUpLogin()
+        SignUpPage._executeLogIn(email, password)
+        HomePage._verifyNewElementsAfterRegistration()
+        navigation._navigationToProducts()
+        ProductsPage._addProductToCart("1")
+        navigation._navigationToCart()
+        CartPage._executeBuyOperation()
+        SignUpPage._executeAccountDeletion()
+    })
 })

@@ -23,9 +23,10 @@ before(() => {
 })
 
 
+describe("Test Case 6: Contact Us Form", () => {
+    it("Test Case 6: Contact Us Form", () => {
+        navigation._navigationToContactUs()
+        ContactUsForm._sendMessage()
 
-it("Test Case 6: Contact Us Form", () => {
-    navigation._navigationToContactUs()
-    ContactUsForm._sendMessage()
-
+    })
 })

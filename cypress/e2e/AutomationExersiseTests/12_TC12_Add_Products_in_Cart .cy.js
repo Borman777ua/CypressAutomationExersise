@@ -19,17 +19,18 @@ import HomePage from "../../support/AutomationExersisePageObject/HomePage"
 import ProductsPage from "../../support/AutomationExersisePageObject/ProductsPage"
 import navigation from "../../support/AutomationExersisePageObject/navigation"
 
+describe("Test Case 12: Add Products in Cart", () => {
+    before(() => {
+        cy.visit("/")
+        HomePage._verifyHomePage()
+    })
 
-before(() => {
-    cy.visit("/")
-    HomePage._verifyHomePage()
-})
-
-it("Test Case 12: Add Products in Cart", () => {
-    navigation._navigationToProducts()
-    ProductsPage._addProductToCart("1")
-    ProductsPage._addProductToCart("2")
-    navigation._navigationToCart()
-    CartPage._verifyProductOnTable(1, "Blue Top", "Rs. 500", "1", "Rs. 500")
-    CartPage._verifyProductOnTable(2, "Men Tshirt", "Rs. 400", "1", "Rs. 400")
+    it("Test Case 12: Add Products in Cart", () => {
+        navigation._navigationToProducts()
+        ProductsPage._addProductToCart("1")
+        ProductsPage._addProductToCart("2")
+        navigation._navigationToCart()
+        CartPage._verifyProductOnTable(1, "Blue Top", "Rs. 500", "1", "Rs. 500")
+        CartPage._verifyProductOnTable(2, "Men Tshirt", "Rs. 400", "1", "Rs. 400")
+    })
 })

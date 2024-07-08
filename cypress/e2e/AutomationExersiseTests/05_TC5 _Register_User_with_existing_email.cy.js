@@ -19,23 +19,24 @@ const email = Cypress.env("testEmail2")
 let password = Cypress.env("testPassword")
 let allertMessage = "Email Address already exist!"
 
+describe("Test Case 5: Register User with existing email", () => {
+    beforeEach(() => {
+        cy.visit('/')
+    })
 
-beforeEach(() => {
-    cy.visit('/')
-})
+    it("Pre Condition:Register User", () => {
+        cy.visit('/')
+        HomePage._verifyHomePage()
+        cy.registerUser(email);
+    })
 
-it("Pre Condition:Register User", () => {
-    cy.visit('/')
-    HomePage._verifyHomePage()
-    cy.registerUser(email);
-})
-
-it("Test Case 5: Register User with existing email", () => {
-    navigation._navigationToSignUpLogin()
-    SignUpPage._startRegistration(email)
-    elementVerification._verifyAlertMessage(allertMessage)
-})
-it("Post Condition: Delete Account", () => {
-    navigation._navigationToSignUpLogin()
-    cy.deleteAccount(email, password)
+    it("Test Case 5: Register User with existing email", () => {
+        navigation._navigationToSignUpLogin()
+        SignUpPage._startRegistration(email)
+        elementVerification._verifyAlertMessage(allertMessage)
+    })
+    it("Post Condition: Delete Account", () => {
+        navigation._navigationToSignUpLogin()
+        cy.deleteAccount(email, password)
+    })
 })

@@ -23,14 +23,18 @@ Test Case 1: Register User
 17. Click 'Delete Account' button
 18. Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
 */
-before(() => {
-    cy.visit('/')
-})
 
-it("Test Case 1: Register User", () => {
-    let email = Cypress.env("testEmail")
-    navigation._navigationToSignUpLogin()
-    cy.registerUser(email);
-    HomePage._verifyNewElementsAfterRegistration()
-    SignUpPage._executeAccountDeletion()
+
+describe("Test Case 1: Register User", () => {
+    before(() => {
+        cy.visit('/')
+    })
+
+    it("Test Case 1: Register User", () => {
+        let email = Cypress.env("testEmail")
+        navigation._navigationToSignUpLogin()
+        cy.registerUser(email);
+        HomePage._verifyNewElementsAfterRegistration()
+        SignUpPage._executeAccountDeletion()
+    })
 })

@@ -13,12 +13,15 @@ Test Case 18: View Category Products
 import HomePage from "../../support/AutomationExersisePageObject/HomePage"
 import navigation from "../../support/AutomationExersisePageObject/navigation"
 
-before(() => {
-    cy.visit("/")
-    HomePage._verifyHomePage()
-})
+
+describe("Test Case 18: View Category Products", () => {
+    before(() => {
+        cy.visit("/")
+        HomePage._verifyHomePage()
+    })
 
 
-it("Test Case 18: View Category Products", () => {
-    navigation._selectCattegory('Women', "Dress", "1")
+    it("Test Case 18: View Category Products", () => {
+        navigation._selectCattegory('Women', "Dress", "1")
+    })
 })

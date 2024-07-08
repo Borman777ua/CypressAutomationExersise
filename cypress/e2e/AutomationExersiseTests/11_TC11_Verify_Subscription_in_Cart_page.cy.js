@@ -13,13 +13,15 @@ Test Case 11: Verify Subscription in Cart page
 import HomePage from "../../support/AutomationExersisePageObject/HomePage"
 import navigation from "../../support/AutomationExersisePageObject/navigation"
 
-before(() => {
-    cy.visit("/")
-    HomePage._verifyHomePage()
-})
+describe("Test Case 11: Verify Subscription in Cart page", () => {
+    before(() => {
+        cy.visit("/")
+        HomePage._verifyHomePage()
+    })
 
-it("Test Case 11: Verify Subscription in Cart page", () => {
-    let email = Cypress.env("testEmail")
-    navigation._navigationToCart()
-    HomePage._executeSubscription(email)
+    it("Test Case 11: Verify Subscription in Cart page", () => {
+        let email = Cypress.env("testEmail")
+        navigation._navigationToCart()
+        HomePage._executeSubscription(email)
+    })
 })

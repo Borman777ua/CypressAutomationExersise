@@ -11,12 +11,14 @@ Test Case 10: Verify Subscription in home page
 
 import HomePage from "../../support/AutomationExersisePageObject/HomePage"
 
-before(() => {
-    cy.visit("/")
-    HomePage._verifyHomePage()
-})
+describe("Test Case 10: Verify Subscription in home page", () => {
+    before(() => {
+        cy.visit("/")
+        HomePage._verifyHomePage()
+    })
 
-it("Test Case 10: Verify Subscription in home page", () => {
-    let email = Cypress.env("testEmail")
-    HomePage._executeSubscription(email)
+    it("Test Case 10: Verify Subscription in home page", () => {
+        let email = Cypress.env("testEmail")
+        HomePage._executeSubscription(email)
+    })
 })

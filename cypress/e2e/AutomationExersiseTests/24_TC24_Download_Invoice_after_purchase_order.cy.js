@@ -29,22 +29,22 @@ Test Case 24: Download Invoice after purchase order
 21. Click 'Delete Account' button
 22. Verify 'ACCOUNT DELETED!' and click 'Continue' button
 */
-before(() => {
-    cy.visit("/")
-    HomePage._verifyHomePage()
-})
 
-
-
-it("Test Case 24: Download Invoice after purchase order", () => {
-    let email = Cypress.env("testEmail")
-    let filename = "invoice.txt"
-    cy.registerUser(email);
-    HomePage._verifyNewElementsAfterRegistration()
-    navigation._navigationToProducts()
-    ProductsPage._addProductToCart("1")
-    navigation._navigationToCart()
-    CartPage._executeBuyOperation()
-    CartPage._downloadInvoiceAndVerify(filename)
-    SignUpPage._executeAccountDeletion()
+describe("Test Case 24: Download Invoice after purchase order", () => {
+    before(() => {
+        cy.visit("/")
+        HomePage._verifyHomePage()
+    })
+    it("Test Case 24: Download Invoice after purchase order", () => {
+        let email = Cypress.env("testEmail")
+        let filename = "invoice.txt"
+        cy.registerUser(email);
+        HomePage._verifyNewElementsAfterRegistration()
+        navigation._navigationToProducts()
+        ProductsPage._addProductToCart("1")
+        navigation._navigationToCart()
+        CartPage._executeBuyOperation()
+        CartPage._downloadInvoiceAndVerify(filename)
+        SignUpPage._executeAccountDeletion()
+    })
 })

@@ -13,14 +13,16 @@ Test Case 19: View & Cart Brand Products
 import ProductsPage from "../../support/AutomationExersisePageObject/ProductsPage"
 import navigation from "../../support/AutomationExersisePageObject/navigation"
 
-before(() => {
-    cy.visit("/")
-})
 
-it("Test Case 19: View & Cart Brand Products", () => {
-    navigation._navigationToProducts()
-    navigation._selectBrand("Polo")
-    ProductsPage._verifySearchedItems()
-    navigation._selectBrand("Madame")
-    ProductsPage._verifySearchedItems()
+describe("Test Case 19: View & Cart Brand Products", () => {
+    before(() => {
+        cy.visit("/")
+    })
+    it("Test Case 19: View & Cart Brand Products", () => {
+        navigation._navigationToProducts()
+        navigation._selectBrand("Polo")
+        ProductsPage._verifySearchedItems()
+        navigation._selectBrand("Madame")
+        ProductsPage._verifySearchedItems()
+    })
 })

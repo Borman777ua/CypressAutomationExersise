@@ -13,15 +13,18 @@ import HomePage from "../../support/AutomationExersisePageObject/HomePage"
 import elementVerification from "../../support/AutomationExersisePageObject/elementVerification"
 import navigation from "../../support/AutomationExersisePageObject/navigation"
 
-before(() => {
-    cy.visit("/")
-    HomePage._verifyHomePage()
-})
 
-it("Test Case 25: Verify Scroll Up using 'Arrow' button and Scroll Down functionality", () => {
-    let text = "Full-Fledged practice website for Automation Engineers"
-    cy.scrollTo('bottom')
-    elementVerification._verifyLocatorWhichContainsELement('[id="footer"]', "Subscription")
-    navigation._clickOnElement('[id="scrollUp"]')
-    elementVerification._verifyLocatorWhichContainsELement('[id="slider-carousel"]', text)
+describe("Test Case 25: Verify Scroll Up using 'Arrow' button and Scroll Down functionality", () => {
+    before(() => {
+        cy.visit("/")
+        HomePage._verifyHomePage()
+    })
+
+    it("Test Case 25: Verify Scroll Up using 'Arrow' button and Scroll Down functionality", () => {
+        let text = "Full-Fledged practice website for Automation Engineers"
+        cy.scrollTo('bottom')
+        elementVerification._verifyLocatorWhichContainsELement('[id="footer"]', "Subscription")
+        navigation._clickOnElement('[id="scrollUp"]')
+        elementVerification._verifyLocatorWhichContainsELement('[id="slider-carousel"]', text)
+    })
 })

@@ -14,16 +14,17 @@ Test Case 21: Add review on product
 import ProductsPage from "../../support/AutomationExersisePageObject/ProductsPage"
 import navigation from "../../support/AutomationExersisePageObject/navigation"
 
+describe("Test Case 21: Add review on product", () => {
+    before(() => {
+        cy.visit("/")
+    })
 
-before(() => {
-    cy.visit("/")
-})
-
-it("Test Case 21: Add review on product", () => {
-    const email = Cypress.env("testEmail")
-    const name = Cypress.env("testName")
-    navigation._navigationToProducts()
-    ProductsPage._verifyAllProducts()
-    ProductsPage._selectProduct("1")
-    ProductsPage._writeReview(name, email)
+    it("Test Case 21: Add review on product", () => {
+        const email = Cypress.env("testEmail")
+        const name = Cypress.env("testName")
+        navigation._navigationToProducts()
+        ProductsPage._verifyAllProducts()
+        ProductsPage._selectProduct("1")
+        ProductsPage._writeReview(name, email)
+    })
 })

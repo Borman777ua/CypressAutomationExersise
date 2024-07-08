@@ -13,12 +13,16 @@ import CartPage from "../../support/AutomationExersisePageObject/CartPage"
 import HomePage from "../../support/AutomationExersisePageObject/HomePage"
 import navigation from "../../support/AutomationExersisePageObject/navigation"
 
-before(() => {
-    cy.visit("/")
-})
 
-it("Add to cart from Recommended items", () => {
-    HomePage._addToCartFromRecomendedItems("4")
-    navigation._navigationToCart()
-    CartPage._verifyProductOnTable("4", "Stylish Dress", "Rs. 1500", 1, "Rs. 1500")
+
+describe("Test Case 22: Add to cart from Recommended items", () => {
+    before(() => {
+        cy.visit("/")
+    })
+
+    it("Add to cart from Recommended items", () => {
+        HomePage._addToCartFromRecomendedItems("4")
+        navigation._navigationToCart()
+        CartPage._verifyProductOnTable("4", "Stylish Dress", "Rs. 1500", 1, "Rs. 1500")
+    })
 })
